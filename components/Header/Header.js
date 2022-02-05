@@ -1,16 +1,22 @@
+import React, { useState } from 'react';
 import { View, StyleSheet, Text } from "react-native";
-import SearchIcon from './../../assets/images/search.svg'
+import RoomsHeader from './RoomsHeader/RoomsHeader';
+import ChatHeader from './ChatHeader/ChatHeader';
 
 const Header = () => {
+    const [chat, setChat] = useState(false);
+
     return (
       <View style={styles.container}>
-          <Text>Rooms</Text>
+        {!chat ? <RoomsHeader/> : <ChatHeader/>}
       </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
+        display: 'flex',
+        justifyContent: 'center',
         height: 92,
         width: '100%',
         backgroundColor: '#B6DEFD',
