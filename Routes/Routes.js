@@ -1,0 +1,43 @@
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Rooms from '../components/Rooms/Rooms';
+import SingleChatRoom from '../components/Rooms/SingleChatRoom/SingleChatRoom';
+import Header from '../components/Header/Header';
+
+const Stack = createNativeStackNavigator();
+
+const Routes = ({ navigation }) => {
+    return (
+        <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Rooms' component={Rooms} options={{
+            header: () => <Header />
+          }} />
+          <Stack.Screen name='SingleChatRoom' component={SingleChatRoom} options={({ navigation }) => ({
+          header: () => <Header navigation={navigation}/>
+        })
+          }/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+};
+
+// const styles = StyleSheet.create({
+//     header: {
+//         display: 'flex',
+//         justifyContent: 'center',
+//         height: 92,
+//         width: '100%',
+//         backgroundColor: '#B6DEFD',
+//         borderBottomRightRadius: 24,
+//         borderBottomLeftRadius: 24,
+//         marginBottom: 24
+//     },
+//     singleIcon: {
+//         width: 44,
+//         height: 44
+//       },
+// })
+
+export default Routes;
