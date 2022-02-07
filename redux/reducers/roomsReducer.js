@@ -7,7 +7,6 @@ const InitialState = {
 }
 
 export const roomsReducer = (state = InitialState, action) => {
-    console.log(action.payload);
     switch(action.type) {
         case actionTypes.SELECT_SINGLE_ROOM_ID:
             return {
