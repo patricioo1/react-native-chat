@@ -3,7 +3,7 @@ import * as actionTypes from './../actions/actions'
 const InitialState = {
     roomId: [],
     user: '',
-    allId: []
+    isMessages: false
 }
 
 export const roomsReducer = (state = InitialState, action) => {
@@ -18,11 +18,6 @@ export const roomsReducer = (state = InitialState, action) => {
             return {
                 ...state,
                 user: action.payload
-            }
-        case actionTypes.SELECT_ALL_ID:
-            return {
-                ...state,
-                allId: action.payload
             }
         default:
             return {

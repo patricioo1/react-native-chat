@@ -1,7 +1,7 @@
 import * as actionTypes from './../actions/actions'
 
 const InitialState = {
-    chatHeader: false
+    visible: false
 }
 
 export const headerReducer = (state = InitialState, action) => {
@@ -9,7 +9,7 @@ export const headerReducer = (state = InitialState, action) => {
         case actionTypes.CHANGE_HEADER:
             return {
                 ...state,
-                chatHeader: !state.chatHeader
+                visible: !state.visible
             }
         default:
             return {
