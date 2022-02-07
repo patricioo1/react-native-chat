@@ -12,21 +12,36 @@ query RootQueryType {
 `
 
 export const GET_SINGLE_ROOM = gql`
-  query RootQueryType($roomId: ID!) {
-        room(id: $roomId) {
-            id
-            messages {
-              body
-              id
-              insertedAt
-            }
-            user {
-              email
-              firstName
-              id
-              lastName
-              role
-            }
+query GetSingleRoom($roomId: ID!) {
+  room(id: $roomId) {
+      id
+      user {
+        firstName
+        id
+      }
+      messages {
+        body
+        id
+        insertedAt
+        user {
+          email
+          firstName
+          id
+          lastName
+          role
         }
+      }
+  }
+}
+`
+
+export const GET_SINGLE_ROOM_MESSAGES = gql`
+  query RootQueryType($roomId: ID!) {
+    room(id: $roomId) {
+      messages{
+        body
+        insertedAt
+      }
     }
+  }
 `
