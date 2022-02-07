@@ -1,28 +1,19 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, Text } from "react-native";
+import React from 'react';
+import { StatusBar, View } from "react-native";
 import RoomsHeader from './RoomsHeader/RoomsHeader';
 import ChatHeader from './ChatHeader/ChatHeader';
+import { useSelector } from 'react-redux';
+import styles from './styles';
 
-const Header = () => {
-    const [chat, setChat] = useState(false);
+const Header = ({ navigation }) => {
+    const visible = useSelector(state => state.header.visible)
 
     return (
       <View style={styles.container}>
-        {!chat ? <RoomsHeader/> : <ChatHeader/>}
+        <StatusBar barStyle='dark-content' />
+        {visible ? <ChatHeader navigation={navigation} /> : <RoomsHeader />}
       </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        height: 92,
-        width: '100%',
-        backgroundColor: '#B6DEFD',
-        borderBottomRightRadius: 24,
-        borderBottomLeftRadius: 24
-    }
-})
 
 export default Header;
