@@ -7,7 +7,7 @@ import Header from '../components/Header/Header';
 
 const Stack = createNativeStackNavigator();
 
-const Routes = ({ navigation }) => {
+const Routes = () => {
     return (
         <NavigationContainer>
         <Stack.Navigator>
@@ -22,22 +22,5 @@ const Routes = ({ navigation }) => {
       </NavigationContainer>
     );
 };
-
-// const styles = StyleSheet.create({
-//     header: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         height: 92,
-//         width: '100%',
-//         backgroundColor: '#B6DEFD',
-//         borderBottomRightRadius: 24,
-//         borderBottomLeftRadius: 24,
-//         marginBottom: 24
-//     },
-//     singleIcon: {
-//         width: 44,
-//         height: 44
-//       },
-// })
 
 export default Routes;
