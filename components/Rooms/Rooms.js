@@ -4,7 +4,7 @@ import { View } from 'react-native'
 import { GET_ROOMS } from '../../GraphQL/queries/queries';
 import Error from '../Statuses/Error/Error';
 import Loading from '../Statuses/Loading/Loading';
-import RoomPreview from './RommPreview/RoomPreview';
+import RoomPreview from './RoomPreview/RoomPreview';
 import styles from './styles';
 
 const Rooms = ({ navigation }) => {
